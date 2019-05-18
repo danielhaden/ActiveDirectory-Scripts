@@ -1,4 +1,6 @@
-﻿$curDir = Get-Location
+﻿#finds users by last name or full name
+
+$curDir = Get-Location
 Set-Location AD:\
 
 If ($args.Count -eq 1) {
