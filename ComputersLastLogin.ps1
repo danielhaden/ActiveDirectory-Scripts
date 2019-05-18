@@ -1,4 +1,5 @@
-﻿$OUpath = Get-Content "C:\Users\hadend\Desktop\scripts\info.txt" | 
+﻿#Finds computers that have been inactive for X days
+$OUpath = Get-Content "C:\Users\hadend\Desktop\scripts\info.txt" | 
             Select-Object -First 1
             
 $curDir = Get-Location
