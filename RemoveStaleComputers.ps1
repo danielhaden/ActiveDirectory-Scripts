@@ -10,7 +10,7 @@ $DaysInactive = Read-Host -Prompt "List computers inactive for more than how man
 
 $time = (Get-Date).AddDays(-($DaysInactive))
 
-$staleComputers = Get-ADComputer -Filter {(LastLogonDate -lt $time)} -SearchBase $OUpath -Properties * | Select-Object -First 1
+$staleComputers = Get-ADComputer -Filter {(LastLogonDate -lt $time)} -SearchBase $OUpath -Properties Name,LastLogonDate
 
 ForEach ($computer In $staleComputers) {
     Write-Host "Computer", $computer.name, "last login at", $computer.LastLogonDate
